@@ -1,22 +1,20 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title></ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-  
-    <ion-div>Bem-vindo</ion-div>
-    <ion-div>Entre para continuar</ion-div>
 
+    <ion-div class="all">
+      <h1 class="titulo">Bem-vindo</h1>
+    <ion-div class="texto">Entre para continuar</ion-div>
 
-    <ion-input placeholder="email"></ion-input>
-    <ion-input placeholder="senha"></ion-input>
+    <ion-div class="form">
+      <ion-input class="form_inputs" placeholder="email"></ion-input>
+      <ion-input class="form_inputs" placeholder="senha"></ion-input>
+    </ion-div>
 
-    <ion-button routerLink="/tabs">confirmar</ion-button>
-    <ion-div>Login</ion-div>
+    <ion-button class="bt-confirma" routerLink="/tabs">confirmar</ion-button>
+    
+    <ion-div class="login">Login</ion-div>
 
-    <ion-div>Não tem uma conta?</ion-div>
-    <a href="">Criar conta</a>
+    <ion-div class="texto">Não tem uma conta?</ion-div>
+      <a class="link" routerLink="/cadastro">Criar conta</a>
+    </ion-div>
 
 </ion-content>
