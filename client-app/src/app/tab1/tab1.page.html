@@ -1,17 +1,28 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Testes de criação
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-label color="danger">area de testes de storage</ion-label>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <form class="form" #form="ngForm" [formGroup]="formu">
+    <h1>setores</h1>
+    <ion-input placeholder="nome do setor" [(ngModel)]="setor.nome"></ion-input>
+    <ion-button>criar setor</ion-button>
+    <ion-button>ver setores</ion-button>
+  </form>
+
+  <form class="form">
+    <h1>produtos</h1>
+    <ion-input placeholder="nome do setor do produto"></ion-input>
+    <ion-input placeholder="nome do produto"></ion-input>
+    <ion-input placeholder="valor do produto"></ion-input>
+    <ion-button>criar produtos</ion-button>
+    <ion-button>ver produtos</ion-button>
+  </form>
+
 </ion-content>
