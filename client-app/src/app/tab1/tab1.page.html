@@ -9,19 +9,19 @@
 <ion-content [fullscreen]="true">
   <ion-label color="danger">area de testes de storage</ion-label>
 
-  <form class="form" #form="ngForm" [formGroup]="formu">
+  <form class="form" [formGroup]="formu_setor">
     <h1>setores</h1>
-    <ion-input placeholder="nome do setor" [(ngModel)]="setor.nome"></ion-input>
-    <ion-button>criar setor</ion-button>
+    <ion-input placeholder="nome do setor" [(ngModel)]="setor.nome" formControlName="nome"></ion-input>
+    <ion-button (click)="criar_setor()">criar setor</ion-button>
     <ion-button>ver setores</ion-button>
   </form>
 
-  <form class="form">
+  <form class="form" [formGroup]="formu_prod">
     <h1>produtos</h1>
-    <ion-input placeholder="nome do setor do produto"></ion-input>
-    <ion-input placeholder="nome do produto"></ion-input>
-    <ion-input placeholder="valor do produto"></ion-input>
-    <ion-button>criar produtos</ion-button>
+    <ion-input placeholder="nome do setor do produto" [(ngModel)]="prods.setor" formControlName="setor"></ion-input>
+    <ion-input placeholder="nome do produto" [(ngModel)]="prods.nome" formControlName="nome"></ion-input>
+    <ion-input placeholder="valor do produto" [(ngModel)]="prods.valor" formControlName="valor"></ion-input>
+    <ion-button (click)="get_setor()">criar produtos</ion-button>
     <ion-button>ver produtos</ion-button>
   </form>
 

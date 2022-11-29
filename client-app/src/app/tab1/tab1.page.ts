@@ -6,6 +6,7 @@ import { Guid } from 'guid-typescript'
 
 import { BancoMercadoService } from '../services/banco-mercado.service';
 import { setor } from '../models/setores.model';
+import { produtos } from '../models/produtos.model';
 
 @Component({
   selector: 'app-tab1',
@@ -14,8 +15,10 @@ import { setor } from '../models/setores.model';
 })
 export class Tab1Page implements OnInit {
 
-  public formu : FormGroup
+  public formu_setor : FormGroup
+  public formu_prod : FormGroup
   public setor : setor
+  public prods : produtos
 
   constructor(
     private formuBilder : FormBuilder,
@@ -23,16 +26,28 @@ export class Tab1Page implements OnInit {
   ) {}
 
   criar_setor(){
-    if (this.formu.valid){
-      this.dados.criar_setor(this.formu.value)
+    if (this.formu_setor.valid){
+      this.dados.criar_setor(this.formu_setor.value)
     }
+  }
+  get_setor(){
+    this.dados.achar_setor(this.prods.nome).then(nome => this.prods.setor = nome)
   }
 
   async ngOnInit(){
     this.setor = {id: Guid.createEmpty(), nome: ''}
+    this.prods = {id: Guid.createEmpty(), nome: '', setor: Guid.createEmpty(), valor: ''}
 
-    this.formu = this.formuBilder.group(
-      {nome: [this.setor.nome, Validators.required]}
-    )
+    this.formu_setor = this.formuBilder.group({
+      id: [this.setor.id],
+      nome: [this.setor.nome, Validators.required]
+    })
+
+    this.formu_prod = this.formuBilder.group({
+      id: [this.prods.id],
+      setor: [this.prods.setor, Validators.required],
+      nome: [this.prods.nome, Validators.required],
+      valor: [this.prods.valor, Validators.required]
+    })
   }
 }

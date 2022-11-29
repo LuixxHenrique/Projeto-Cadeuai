@@ -17,6 +17,11 @@ export class BancoMercadoService {
   criar_setor(setores : setor) {
     setores.id = Guid.create()
     
-    this.storage.set
+    this.storage.set(setores.id.toString(), JSON.stringify(setores))
+  }
+  async achar_setor(nome: string){
+    const setor = JSON.parse(await this.storage.get(nome))
+    
+    return setor.id
   }
 }
