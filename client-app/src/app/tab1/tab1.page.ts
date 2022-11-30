@@ -20,6 +20,9 @@ export class Tab1Page implements OnInit {
   public setor : setor
   public prods : produtos
 
+  public mostrar_setor: any []
+  ver_setor : boolean
+
   constructor(
     private formuBilder : FormBuilder,
     private dados : BancoMercadoService
@@ -30,13 +33,20 @@ export class Tab1Page implements OnInit {
       this.dados.criar_setor(this.formu_setor.value)
     }
   }
-  get_setor(){
-    this.dados.achar_setor(this.prods.nome).then(nome => this.prods.setor = nome)
+  criar_prods(){
+    this.dados.criar_produ(this.formu_prod.value)
+  }
+
+  mostrar_setores(){
+    this.ver_setor = true
+    this.dados.select_tudo().then(arraysetor => this.mostrar_setor = arraysetor)
   }
 
   async ngOnInit(){
+    this.ver_setor = false
+
     this.setor = {id: Guid.createEmpty(), nome: ''}
-    this.prods = {id: Guid.createEmpty(), nome: '', setor: Guid.createEmpty(), valor: ''}
+    this.prods = {id: Guid.createEmpty(), nome: '', setor: '', valor: ''}
 
     this.formu_setor = this.formuBilder.group({
       id: [this.setor.id],

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { Storage } from '@ionic/storage-angular';
 import { setor } from '../models/setores.model';
+
 import { produtos } from '../models/produtos.model';
 import { Guid } from 'guid-typescript';
 
@@ -19,9 +20,25 @@ export class BancoMercadoService {
     
     this.storage.set(setores.id.toString(), JSON.stringify(setores))
   }
-  async achar_setor(nome: string){
-    const setor = JSON.parse(await this.storage.get(nome))
-    
-    return setor.id
+  criar_produ(prods : produtos){
+    prods.id = Guid.create()
+
+    this.storage.set(prods.id.toString(), JSON.stringify(prods))
   }
+
+  async select_tudo(){
+    let arraysetor: setor [] = []
+
+    await this.storage.forEach((value: string) => 
+        {const setor: setor = JSON.parse(value); arraysetor.push(setor)})
+
+    return arraysetor
+  }
+
+  // async achar_setor(nome: string){
+  //   const tudo = this.select_tudo()
+  //   const filtrado = (await tudo).filter(dado => dado.nome === nome)
+
+  //   return filtrado
+  // }
 }
