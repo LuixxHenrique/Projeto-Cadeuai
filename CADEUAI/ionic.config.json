@@ -1,0 +1,7 @@
+{
+  "name": "CADEUAI",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

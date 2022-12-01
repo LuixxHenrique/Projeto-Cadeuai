@@ -20,18 +20,19 @@ const routes: Routes = [
     loadChildren: () => import('./pages/cadastro/cadastro.module').then( m => m.CadastroPageModule)
   },
   {
-    path: 'config',
-    loadChildren: () => import('./pages/config/config.module').then( m => m.ConfigPageModule)
+    path: 'testes',
+    loadChildren: () => import('./pages/testes/testes.module').then( m => m.TestesPageModule)
   },
   {
-    path: 'tests',
-    loadChildren: () => import('./pages/tests/tests.module').then( m => m.TestsPageModule)
-  }
+    path: 'configu',
+    loadChildren: () => import('./pages/configu/configu.module').then( m => m.ConfiguPageModule)
+  },
 ];
+
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
