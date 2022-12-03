@@ -20,13 +20,13 @@ const routes: Routes = [
     loadChildren: () => import('./pages/cadastro/cadastro.module').then( m => m.CadastroPageModule)
   },
   {
+    path: 'configu',
+    loadChildren: () => import('./pages/configu/configu.module').then( m => m.ConfiguPageModule)
+  },  {
     path: 'testes',
     loadChildren: () => import('./pages/testes/testes.module').then( m => m.TestesPageModule)
   },
-  {
-    path: 'configu',
-    loadChildren: () => import('./pages/configu/configu.module').then( m => m.ConfiguPageModule)
-  },
+
 ];
 
 @NgModule({
