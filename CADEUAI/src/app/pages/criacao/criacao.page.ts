@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { Guid } from 'guid-typescript';
 import { produtos } from 'src/app/models/produtos.model';
@@ -12,15 +12,27 @@ import { BancoMercadoService } from 'src/app/services/banco-marcado.service'
   styleUrls: ['./criacao.page.scss'],
 })
 export class CriacaoPage implements OnInit {
+  public setorFgroup : FormGroup
+  public produFgroup : FormGroup
   public setor_model : setor
-  public setor_produ : produtos
+  public produ_model : produtos
 
   constructor(
     private formBuilder: FormBuilder,
     private service : BancoMercadoService
   ) { }
+  criar_setor(){
+
+  }
 
   ngOnInit() {
+    this.setor_model = {id: Guid.createEmpty(), nome: '', tipo: 'setor'}
+
+    this.setorFgroup = this.formBuilder.group({
+      id: [this.setor_model.id, Validators.required],
+      nome: [this.setor_model.nome, Validators.compose([Validators.required, Validators.maxLength(40)])],
+      tipo: [this.setor_model.tipo, Validators.required]
+    })
   }
 
 }

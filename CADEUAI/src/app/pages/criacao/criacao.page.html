@@ -11,9 +11,9 @@
 
 <ion-content>
   <!------------------------------- Setores --------------------------->
-  <form class="formulario">
+  <form class="formulario" [formGroup]="setorFgroup" (submit)="criar_setor()">
     <h1>setor</h1>
-    <ion-input placeholder="nome"></ion-input>
+    <ion-input placeholder="nome" [(ngModel)]="produ_model.nome" formControlName="nome"></ion-input>
 
     <div>
       <ion-button>criar</ion-button>
