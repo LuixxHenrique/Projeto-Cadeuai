@@ -6,5 +6,5 @@ export interface produtos {
 
     nome: string
     valor: string
-    tipo: 'produto'
+    tipo: string
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { setor } from 'src/app/models/setores.model';
 
 @Component({
   selector: 'app-configu',
