@@ -1,9 +1,45 @@
-<ion-header [translucent]="true" mode="ios">
+<ion-menu contentId="my-content">
+  <!-- Add menu content here -->
+</ion-menu>
+
+<ion-header>
   <ion-toolbar>
-    <ion-searchbar mode="ios" placeholder="buscar produtos"></ion-searchbar>
+    <ion-title>
+      HOME
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-button fill="clear" color="danger" routerLink="/criacao">area de criação</ion-button>
+<ion-content id="my-content">
+  <ion-searchbar placeholder="Procurar">
+  </ion-searchbar>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          sus
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card>
+          sus
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card>
+          sus
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed" routerLink="/criacao">
+    <ion-fab-button>
+      <ion-icon name="camera-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

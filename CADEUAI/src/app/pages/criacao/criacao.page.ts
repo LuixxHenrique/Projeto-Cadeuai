@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Camera } from '@ionic-native/camera'
 
 import { Guid } from 'guid-typescript';
 import { produtos } from 'src/app/models/produtos.model';
@@ -19,20 +20,10 @@ export class CriacaoPage implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private service : BancoMercadoService
+    private service : BancoMercadoService,
+    private camera: Camera
   ) { }
-  criar_setor(){
 
-  }
 
-  ngOnInit() {
-    this.setor_model = {id: Guid.createEmpty(), nome: '', tipo: 'setor'}
-
-    this.setorFgroup = this.formBuilder.group({
-      id: [this.setor_model.id, Validators.required],
-      nome: [this.setor_model.nome, Validators.compose([Validators.required, Validators.maxLength(40)])],
-      tipo: [this.setor_model.tipo, Validators.required]
-    })
-  }
-
+  ngOnInit() {}
 }

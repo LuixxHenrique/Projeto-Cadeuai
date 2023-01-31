@@ -13,15 +13,15 @@
   </div>
   <div class="form">
     <div class="fundo">
-      <ion-input class="form_inputs" id="nome" placeholder="Nome"></ion-input>
-    <ion-input class="form_inputs" id="sobrenome" placeholder="Sobrenome"></ion-input>
-    <ion-input class="form_inputs" id="email" placeholder="Email"></ion-input>
-    <ion-input class="form_inputs" id="senha" placeholder="senha"></ion-input>
+      <ion-input class="form_inputs" id="nome" type="text" placeholder="Nome" required></ion-input>
+    <ion-input class="form_inputs" id="sobrenome" type="text" placeholder="Sobrenome" required></ion-input>
+    <ion-input class="form_inputs" id="email" type="email" placeholder="Email" required></ion-input>
+    <ion-input class="form_inputs" type="password" id="senha" placeholder="senha" required></ion-input>
     <ion-checkbox slot="start" class="check"></ion-checkbox>
     <ion-label class="termos">concordo com os <br>termos de serviço</ion-label>
     </div>
     
-    <ion-button  class="botao" routerLink="/home">Continuar</ion-button>
+    <ion-button  class="botao" routerLink="/criacao">Continuar</ion-button>
     <a  class="voltar" routerLink="/login">voltar</a>
   </div>
  

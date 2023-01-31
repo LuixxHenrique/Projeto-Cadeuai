@@ -1,38 +1,6 @@
-<ion-header>
-  <ion-toolbar>
-
-    <ion-buttons>
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-
-    <ion-title>criacao</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-  <!------------------------------- Setores --------------------------->
-  <form class="formulario" [formGroup]="setorFgroup" (submit)="criar_setor()">
-    <h1>setor</h1>
-    <ion-input placeholder="nome" [(ngModel)]="produ_model.nome" formControlName="nome"></ion-input>
-
-    <div>
-      <ion-button>criar</ion-button>
-      <ion-button>ver</ion-button>
-    </div>
-
-  </form>
-  <!------------------------------- Produtos --------------------------->
-  <form class="formulario">
-    <h1>produtos</h1>
-    <ion-input placeholder="nome"></ion-input>
-    <ion-input placeholder="setor do produto"></ion-input>
-    <ion-input placeholder="valor"></ion-input>
-    <ion-input></ion-input>
-
-    <div>
-      <ion-button>criar</ion-button>
-      <ion-button>ver</ion-button>
-    </div>
-
-  </form>
+  <div class="ar1">
+    <a  class="voltar" routerLink="/login"><ion-icon name="arrow-back"></ion-icon></a>
+    <ion-button class="pic" id="takePic"></ion-button>
+  </div>  
 </ion-content>
