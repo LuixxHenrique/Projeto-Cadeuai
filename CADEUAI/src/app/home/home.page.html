@@ -9,15 +9,15 @@
       <ion-icon name="settings" slot="start"></ion-icon>
       <ion-label>Configurações</ion-label>
     </ion-item>
-    <ion-item lines="none">
+    <ion-item lines="none" routerLink="/contato">
       <ion-icon name="mail" slot="start"></ion-icon>
       <ion-label>Contato</ion-label>
     </ion-item>
-    <ion-item lines="none">
+    <ion-item lines="none" routerLink="/suporte">
       <ion-icon name="chatbubbles" slot="start"></ion-icon>
       <ion-label>Suporte</ion-label>
     </ion-item>
-    <ion-item lines="none">
+    <ion-item lines="none" routerLink="/criacao">
       <ion-icon name="qr-code" slot="start"></ion-icon>
       <ion-label>Ler QR</ion-label>
     </ion-item>
@@ -29,7 +29,7 @@
   <ion-toolbar>
 
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-menu-button color="light"></ion-menu-button>
     </ion-buttons>
 
   </ion-toolbar>
@@ -60,7 +60,7 @@
   </ion-grid>
 
   <ion-fab vertical="bottom" horizontal="center" slot="fixed" routerLink="/criacao">
-    <ion-fab-button>
+    <ion-fab-button color="light">
       <ion-icon name="camera-outline"></ion-icon>
     </ion-fab-button>
   </ion-fab>

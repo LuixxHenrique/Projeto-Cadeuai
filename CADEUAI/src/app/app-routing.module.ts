@@ -25,6 +25,14 @@ const routes: Routes = [
   },  {
     path: 'criacao',
     loadChildren: () => import('./pages/criacao/criacao.module').then( m => m.CriacaoPageModule)
+  },
+  {
+    path: 'contato',
+    loadChildren: () => import('./pages/contato/contato.module').then( m => m.ContatoPageModule)
+  },
+  {
+    path: 'suporte',
+    loadChildren: () => import('./pages/suporte/suporte.module').then( m => m.SuportePageModule)
   }
 
 ];

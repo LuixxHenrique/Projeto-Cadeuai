@@ -11,16 +11,16 @@ create table user_client(
     primary key(id)
 );
 
-CREATE TABLE KRCode (
+CREATE TABLE QRCode (
 	id int PRIMARY KEY auto_increment,
     code VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE Setores (
     id INT auto_increment primary key,
-    krcode int,
+    qrcode int,
     nome VARCHAR(100) NOT NULL,
-    FOREIGN KEY (krcode) REFERENCES KRCode(id)
+    FOREIGN KEY (qrcode) REFERENCES QRCode(id)
 );
 
 CREATE TABLE Produtos (
@@ -32,9 +32,9 @@ CREATE TABLE Produtos (
     FOREIGN KEY (setor_id) REFERENCES Setores(id)
 );
 
-INSERT INTO KRCode (code) VALUE ('kr');
+INSERT INTO QRCode (code) VALUE ('qr');
 
-INSERT INTO Setores (krcode, nome) VALUES ( 1 , 'Eletrônicos');
+INSERT INTO Setores (qrcode, nome) VALUES ( 1 , 'Eletrônicos');
 
 INSERT INTO Produtos (nome, descricao, preco, setor_id) 
 VALUES 
@@ -45,11 +45,11 @@ VALUES
     ('Home Theater', 'Um sistema de som de alta qualidade', 999.99, 1);
 
 select * from user_client;
-select * from KRcode;
+select * from QRcode;
 select * from Produtos;
 select * from Setores;
 
 describe user_client;
-describe KRcode;
+describe QRcode;
 describe Produtos;
 describe Setores;
