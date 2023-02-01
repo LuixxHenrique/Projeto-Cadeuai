@@ -29,7 +29,7 @@
   <ion-toolbar>
 
     <ion-buttons slot="start">
-      <ion-menu-button color="light"></ion-menu-button>
+      <ion-menu-button ></ion-menu-button>
     </ion-buttons>
 
   </ion-toolbar>
@@ -38,29 +38,16 @@
 <ion-content id="my-content">
   <ion-searchbar placeholder="Procurar">
   </ion-searchbar>
+  
+    <ion-img src="assets/map/]/entrada/entrada1.png" class="img_map"></ion-img>
 
-  <ion-grid>
-    <ion-row>
- 
-        <ion-card>
-          setor 1
-        </ion-card>
-   
-   
-        <ion-card>
-          setor 2
-        </ion-card>
+    <ion-img src={{image_path}} class="img_map"></ion-img>
 
-   
-        <ion-card>
-          setor 3
-        </ion-card>
-    
-    </ion-row>
-  </ion-grid>
+    <ion-button (click)="routeSelect(1)">setor 1</ion-button>
+    <ion-button (click)="routeSelect(2)">setor 2</ion-button>
 
   <ion-fab vertical="bottom" horizontal="center" slot="fixed" routerLink="/criacao">
-    <ion-fab-button color="light">
+    <ion-fab-button >
       <ion-icon name="camera-outline"></ion-icon>
     </ion-fab-button>
   </ion-fab>

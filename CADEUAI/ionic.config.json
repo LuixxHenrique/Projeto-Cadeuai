@@ -1,7 +1,8 @@
 {
   "name": "CADEUAI",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }
