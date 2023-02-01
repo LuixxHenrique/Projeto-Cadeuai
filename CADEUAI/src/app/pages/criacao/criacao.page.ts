@@ -20,8 +20,7 @@ export class CriacaoPage implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private service : BancoMercadoService,
-    private camera: Camera
+    private service : BancoMercadoService
   ) { }
 
 
