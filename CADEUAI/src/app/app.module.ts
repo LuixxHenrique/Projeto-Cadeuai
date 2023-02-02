@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 import { IonicStorageModule } from '@ionic/storage-angular';
 import { FormBuilder } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
-import { Camera } from '@ionic-native/camera';
+import { Camera, CameraResultType } from '@capacitor/camera';
 
 @NgModule({
   declarations: [AppComponent],
