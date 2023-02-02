@@ -24,15 +24,18 @@ export class HomePage{
   slides = [
     {
       titulo: 'Frios',
-      image: 'assets/setor_images/frios.png'
+      image: 'assets/setor_images/frios.png',
+      num: 1
     },
     {
       titulo: 'Limpeza',
-      image: 'assets/setor_images/limpeza.png'
+      image: 'assets/setor_images/limpeza.png',
+      num: 2
     },
     {
       titulo: 'Bebidas',
-      image: 'assets/setor_images/bebidas.png'
+      image: 'assets/setor_images/bebidas.png',
+      num: 2
     }
   ];
 
