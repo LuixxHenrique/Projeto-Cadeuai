@@ -30,7 +30,11 @@ const routes: Routes = [
   {
     path: 'perfil',
     loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule)
+  },  {
+    path: 'banco',
+    loadChildren: () => import('./pages/banco/banco.module').then( m => m.BANCOPageModule)
   }
+
 
 ];
 

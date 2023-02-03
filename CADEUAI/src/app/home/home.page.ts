@@ -1,7 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 
-
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -24,17 +23,17 @@ export class HomePage{
   slides = [
     {
       titulo: 'Frios',
-      image: 'assets/setor_images/frios.png',
+      image: '/assets/map/setor_images/frios.png',
       num: 1
     },
     {
       titulo: 'Limpeza',
-      image: 'assets/setor_images/limpeza.png',
+      image: '/assets/map/setor_images/limpeza.png',
       num: 2
     },
     {
       titulo: 'Bebidas',
-      image: 'assets/setor_images/bebidas.png',
+      image: '/assets/map/setor_images/bebidas.png',
       num: 2
     }
   ];
@@ -57,5 +56,8 @@ export class HomePage{
     // Here you get the image as result.
     const theActualPicture = image.dataUrl;
   }
+
+
+
 
 }
