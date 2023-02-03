@@ -40,17 +40,11 @@ export class HomePage{
   ];
 
   public image_path =  '' 
-  public image = String
   
   constructor() {}
 
   routeSelect(value:Number){
-    if (value == 1){
-      this.image_path = 'assets/map/map 1/entrada/setor1.png'
-    }
-    if (value == 2){
-      this.image_path = 'assets/map/map 1/entrada/setor2.png'
-    }
+    this.image_path = `assets/map/map 1/entrada/setor${value}.png`
   }
 
   async takePicture() {
