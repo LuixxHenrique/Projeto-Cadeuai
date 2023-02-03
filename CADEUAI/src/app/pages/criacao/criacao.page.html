@@ -1,7 +1,10 @@
 <ion-content>
-  <div class="ar1">
-    <a  class="voltar" routerLink="/home"><ion-icon name="arrow-back"></ion-icon></a>
-    <ion-button class="pic2" id="FileLocal" (click)="selectImg()"><ion-icon slot="start" name="archive"></ion-icon></ion-button>
-    <ion-button class="pic" id="FileLocal" (click)="takePicture()"></ion-button>
-  </div>  
+  
+    <!-- <ion-button class="pic2" id="FileLocal" (click)="selectImg()"><ion-icon slot="start" name="archive"></ion-icon></ion-button> -->
+
+  <div class="select">
+    <ion-button routerLink="/home">selecionar mapa</ion-button>
+    <ion-button id="FileLocal" (click)="takePicture()">ler qr code</ion-button>
+  </div>
+
 </ion-content>

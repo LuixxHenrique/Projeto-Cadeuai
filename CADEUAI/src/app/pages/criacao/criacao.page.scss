@@ -1,28 +1,8 @@
-.pic{
-    height: 3.5rem;
-    width: 3.5rem;
-    --border-radius: 100%;
-    position: absolute;
-    left:41%;
-    bottom: 2%;
-}
-
-.pic2 {
-    height: 3.5rem;
-    width: 3.5rem;
-    position: absolute;
-    left:70%;
-    bottom: 2%;
-}
-
-
-.voltar ion-icon{
-    height: 3.2em;
-    width: 3.2rem;
-    border-radius: 1px solid black;
-    position: absolute;
-    left: 12%;
-    bottom: 3%;
+.select{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 50%;
 }
 
 

@@ -24,7 +24,10 @@
   background: url("/assets/icon/logo.png");
   background-size: cover;
 }
-.camera_button {
-  display: flex;
-  margin: 0 auto;
+
+.footer {
+  display: flex; 
+  justify-content: space-between;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
