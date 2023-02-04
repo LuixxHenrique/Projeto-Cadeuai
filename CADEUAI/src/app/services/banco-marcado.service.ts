@@ -13,6 +13,10 @@ export class BancoMercadoService {
     private storage : Storage
   ) { }
 
+  async adicionar_map(model){
+    this.storage.set(model.id.toString(), JSON.stringify(model))
+  }
+  
   async retorno_map(){
     let arraymap: map [] = []
 
