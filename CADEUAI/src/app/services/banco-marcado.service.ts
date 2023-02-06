@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 
 import { Storage } from '@ionic/storage-angular';
-import { Guid } from 'guid-typescript';
 import { map } from '../models/mapa.model';
 
 @Injectable({
