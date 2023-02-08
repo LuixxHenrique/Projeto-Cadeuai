@@ -1,5 +1,7 @@
-import { Component, OnInit} from '@angular/core';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { Component} from '@angular/core';
+import { Camera, CameraResultType} from '@capacitor/camera';
+import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner/ngx';
+
 
 @Component({
   selector: 'app-home',
@@ -40,7 +42,7 @@ export class HomePage {
 
   public image_path =  '' 
   
-  constructor() {}
+  constructor(private qrScanner: QRScanner ) {}
 
   routeSelect(value:Number){
     this.image_path = `assets/map/map 1/entrada/setor${value}.png`
@@ -52,9 +54,14 @@ export class HomePage {
       allowEditing: false,
       resultType: CameraResultType.DataUrl,
     });
-  
-    // Here you get the image as result.
-    const theActualPicture = image.dataUrl;
-  }
 
+    const isScanAvailable = await this.qrScanner.prepare();
+    if (isScanAvailable) {
+      const scanSub = this.qrScanner.scan().subscribe((text: string) => {
+        console.log('Scanned QR code: ', text);
+        scanSub.unsubscribe();
+      });
+    }
+
+}
 }
