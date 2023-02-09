@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Sus } from 'src/app/modal/test';
+import { MapDatabaseService } from 'src/app/services/map-database.service';
 
 @Component({
   selector: 'app-banco',
@@ -13,12 +15,18 @@ export class BancoPage {
   public show_map: any
 
   // private banco: BancoMercadoService
-  constructor() { 
+  constructor(private db:MapDatabaseService) { 
+
   //   this.banco.retorno_map().then(arraymap => {this.show_map = arraymap})
   // }
 
   // ionViewDidEnter(){ //executa toda vez que o pagina é carregada
   //   this.banco.retorno_map().then(arraymap => {this.show_map = arraymap})
+  }
+
+  signUp(data:Sus): void {
+    console.warn(data)
+    this.db.userSignUp(data);
   }
 
   // criar_map(){

@@ -6,7 +6,7 @@
     </ion-buttons>
 
     <ion-title>
-      configurações
+      configurações sus
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -25,11 +25,15 @@
     </ion-item>
     <ion-item lines="full">
       <ion-icon name="notifications-outline" slot="start"></ion-icon>
-      <ion-label>notificações</ion-label>
+      <ion-label id="modal_notifi">notificações</ion-label>
+        <ion-modal #modal trigger="modal_notifi" [initialBreakpoint]="0.70" [breakpoints]="[0, 0.25, 0.5, 0.75]">
+          <ng-template>
+            <ion-item class="single_item"></ion-item>
+          </ng-template>
+        </ion-modal>
     </ion-item>
-    <ion-item lines="full">
+    <ion-item lines="full" detail="false" href="#">
       <ion-icon name="globe-outline" slot="start"></ion-icon>
-      <ion-item href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlDdwUNeCZEj54DLGRDoAPauUg5iDlqiapnDq_eXvTgg&s">Web Site</ion-item>
     </ion-item>
     <ion-item lines="full" slot="start">
       <ion-icon name="logo-google-playstore" slot="start"></ion-icon>

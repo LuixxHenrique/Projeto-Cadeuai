@@ -1,0 +1,7 @@
+{
+  "name": "CORINGUEI",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

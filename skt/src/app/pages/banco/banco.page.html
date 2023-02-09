@@ -10,21 +10,8 @@
 </ion-header>
 
 <ion-content>
-  <!-- <ion-button (click)="criar_map()">carregar mapa</ion-button> -->
-  
-  <div  *ngFor="let show_map of show_map">
-  <ion-item>
-    <ion-thumbnail >
-      <ion-img src="{{ show_map.map_image }}"></ion-img>
-    </ion-thumbnail>
-    <ion-thumbnail>
-      <ion-img src="{{ show_map.caminhos_images.caminho1 }}"></ion-img>
-    </ion-thumbnail>
-    <ion-thumbnail >
-      <ion-img src="{{ show_map.caminhos_images.caminho2 }}"></ion-img>
-    </ion-thumbnail>
-  </ion-item>
-  
-  <ion-label class="map_id">{{ show_map.id.value }}</ion-label>
-  </div>
+  <form  #userSignUp="ngForm" (ngSubmit)="signUp(userSignUp.value)">
+    <ion-input ngModel name="nome" placeholder="sus"></ion-input>
+    <ion-button type="submit">Enviar</ion-button>
+  </form>
 </ion-content>
