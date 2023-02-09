@@ -1,0 +1,51 @@
+import { NgModule } from '@angular/core';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [  
+  {
+    path: '',
+    redirectTo: 'select-map',
+    pathMatch: 'full'
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: 'create-product',
+    loadChildren: () => import('./pages/other_pages/create-product/create-product.module').then( m => m.CreateProductPageModule)
+  },
+  {
+    path: 'list-product',
+    loadChildren: () => import('./pages/other_pages/list-product/list-product.module').then( m => m.ListProductPageModule)
+  },
+  {
+    path: 'config',
+    loadChildren: () => import('./pages/config/config.module').then( m => m.ConfigPageModule)
+  },
+  {
+    path: 'banco',
+    loadChildren: () => import('./pages/banco/banco.module').then( m => m.BancoPageModule)
+  },
+  {
+    path: 'contato',
+    loadChildren: () => import('./pages/contato/contato.module').then( m => m.ContatoPageModule)
+  },
+  {
+    path: 'suporte',
+    loadChildren: () => import('./pages/suporte/suporte.module').then( m => m.SuportePageModule)
+  },
+  {
+    path: 'select-map',
+    loadChildren: () => import('./pages/select-map/select-map.module').then( m => m.SelectMapPageModule)
+  }
+  
+];
+
+@NgModule({
+  imports: [
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+  ],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }

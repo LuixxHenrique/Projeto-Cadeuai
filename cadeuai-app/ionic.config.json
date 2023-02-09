@@ -1,7 +1,0 @@
-{
-  "name": "cadeuai-app",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}
