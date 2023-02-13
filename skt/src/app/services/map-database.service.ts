@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-
-import { collection, doc, Firestore, setDoc, deleteDoc } from '@angular/fire/firestore';
-import { Sus } from '../modal/test';
+import { Firestore, collectionData, collection, doc, setDoc, deleteDoc, docSnapshots } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
+import { maps } from '../modal/maps.model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,11 +9,5 @@ import { Sus } from '../modal/test';
 export class MapDatabaseService {
 
   constructor(private firestore: Firestore) { }
-
-  userSignUp(data: Sus) {
-    const document = doc (collection(this.firestore, 'sus'));
-    return setDoc(document, data);    
-  }
-
 
 }
