@@ -8,12 +8,13 @@ import { MapDatabaseService } from 'src/app/services/map-database.service';
 })
 export class BancoPage {
 
-   // models
-  // public map: mapa
+  constructor(
+    private db:MapDatabaseService
+    ) {}
 
-  public show_map: any
 
-  // private banco: BancoMercadoService
-  constructor(private db:MapDatabaseService) {}
+  ionViewDidLoad(){
+    
+  }
 
 }

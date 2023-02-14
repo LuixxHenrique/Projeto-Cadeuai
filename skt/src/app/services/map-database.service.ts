@@ -1,13 +1,19 @@
 import { Injectable } from '@angular/core';
-import { Firestore, collectionData, collection, doc, setDoc, deleteDoc, docSnapshots } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
-import { maps } from '../modal/maps.model';
+import { NavController } from '@ionic/angular';
+import { HttpClient } from '@angular/common/http';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class MapDatabaseService {
 
-  constructor(private firestore: Firestore) { }
+  constructor(
+    private http: HttpClient,
+    private navCtrl: NavController
+    ) { }
 
+  get_map(){
+    this.http.get('')
+  }
 }
