@@ -1,5 +1,8 @@
 import { Component, OnInit} from '@angular/core';
 import { Camera, CameraResultType } from '@capacitor/camera';
+import { SwiperModule } from 'swiper/types/shared';
+import { Swiper, SwiperOptions }  from 'swiper';
+
 
 @Component({
   selector: 'app-select-map',
@@ -11,7 +14,6 @@ export class SelectMapPage implements OnInit {
   constructor() { }
 
   async ngOnInit() { }
- 
   
   async takePicture() {
     const image = await Camera.getPhoto({
@@ -19,8 +21,7 @@ export class SelectMapPage implements OnInit {
       allowEditing: false,
       resultType: CameraResultType.DataUrl,
     });
-  
-    // FAIZ U ELI
+
     const theActualPicture = image.dataUrl;
   }
 }

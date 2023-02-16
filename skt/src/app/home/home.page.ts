@@ -1,5 +1,6 @@
 import { Component} from '@angular/core';
 import { Camera, CameraResultType } from '@capacitor/camera';
+import { Swiper, SwiperOptions }  from 'swiper';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,21 @@ import { Camera, CameraResultType } from '@capacitor/camera';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage{
+  slides = [
+    {image: '/assets/map/setor_images/frios.png',
+     num: 1},
+    {image: '/assets/map/setor_images/limpeza.png',
+
+     num: 2},
+    {image: '/assets/map/setor_images/bebidas.png',
+
+     num:3},
+  ]
+  
+  
+  
+  
+  
   logo =[
     {
       image: "assets/icon/logo.png"
@@ -18,24 +34,6 @@ export class HomePage{
     centeredSlides: true,
     loop: true,
   }
-
-  slides = [
-    {
-      titulo: 'Frios',
-      image: '/assets/map/setor_images/frios.png',
-      num: 1
-    },
-    {
-      titulo: 'Limpeza',
-      image: '/assets/map/setor_images/limpeza.png',
-      num: 2
-    },
-    {
-      titulo: 'Bebidas',
-      image: '/assets/map/setor_images/bebidas.png',
-      num: 2
-    }
-  ];
 
   public image_path =  '' 
   

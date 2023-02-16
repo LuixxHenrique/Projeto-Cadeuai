@@ -9,12 +9,12 @@ import { MapDatabaseService } from 'src/app/services/map-database.service';
 export class BancoPage {
 
   constructor(
-    private db:MapDatabaseService
-    ) {}
-
-
-  ionViewDidLoad(){
+    private map: MapDatabaseService
+    ) {
+      console.log('sus')
+      this.map.getmaps()
+      console.log("usu")
+    }
     
-  }
 
 }

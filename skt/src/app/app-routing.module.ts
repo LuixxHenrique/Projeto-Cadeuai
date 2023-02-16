@@ -38,7 +38,12 @@ const routes: Routes = [
   {
     path: 'select-map',
     loadChildren: () => import('./pages/select-map/select-map.module').then( m => m.SelectMapPageModule)
+  },
+  {
+    path: 'splash',
+    loadChildren: () => import('./pages/splash/splash.module').then( m => m.SplashPageModule)
   }
+
   
 ];
 

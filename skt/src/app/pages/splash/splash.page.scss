@@ -1,0 +1,34 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+ion-content{
+    --background-image: linear-gradient(180deg, #001D0B 0%, #0DB045 100%);
+}
+
+ion-img{
+    display: block;
+    justify-content: center;
+    position: absolute;
+    top: 50vw;
+    bottom: 50vh;
+}
+
+.Ball_Dtal{
+    clip-path: circle(50%);
+    border: 2px black solid;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
