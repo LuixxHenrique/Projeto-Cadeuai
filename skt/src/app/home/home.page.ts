@@ -1,6 +1,6 @@
 import { Component} from '@angular/core';
 import { Camera, CameraResultType } from '@capacitor/camera';
-import { Swiper, SwiperOptions }  from 'swiper';
+
 
 @Component({
   selector: 'app-home',
@@ -12,16 +12,10 @@ export class HomePage{
     {image: '/assets/map/setor_images/frios.png',
      num: 1},
     {image: '/assets/map/setor_images/limpeza.png',
-
      num: 2},
     {image: '/assets/map/setor_images/bebidas.png',
-
      num:3},
   ]
-  
-  
-  
-  
   
   logo =[
     {
@@ -29,7 +23,7 @@ export class HomePage{
     }
   ]
 
-  option = {
+  swiperOption = {
     slidesPerView: 1.7,
     centeredSlides: true,
     loop: true,

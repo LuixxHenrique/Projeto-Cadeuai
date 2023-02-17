@@ -7,10 +7,6 @@ const routes: Routes = [
   {
     path: 'contact-details/:id',
     loadChildren: () => import('./contact-details/contact-details.module').then(m => m.ContactDetailsPageModule)
-  },
-  {
-    path: 'update-contact/:id',
-    loadChildren: () => import('./update-contact/update-contact.module').then(m => m.UpdateContactPageModule)
   }
 ];
 

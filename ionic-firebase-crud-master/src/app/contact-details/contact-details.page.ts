@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DataService } from '../services/data.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Contact } from '../models/contact';
+import { sus } from '../models/contact';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs';
 })
 export class ContactDetailsPage implements OnInit, OnDestroy {
 
-  public contact: Contact;
+  public contact: sus;
 
   sub1: Subscription;
 
@@ -24,15 +24,15 @@ export class ContactDetailsPage implements OnInit, OnDestroy {
   ngOnInit() {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
 
-    this.sub1 = this.dataService.getContactById(id)
-    .subscribe(contact => {
-      // if the contact doesn't exists, return to home page
-      if (!contact) {
-        this.router.navigate(['/home']);
-      } else {
-        this.contact = contact;
-      }
-    });
+    // this.sub1 = this.dataService.getContactById(id)
+    // .subscribe(contact => {
+    //   // if the contact doesn't exists, return to home page
+    //   if (!contact) {
+    //     this.router.navigate(['/home']);
+    //   } else {
+    //     this.contact = contact;
+    //   }
+    // });
   }
 
   ngOnDestroy() {

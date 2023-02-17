@@ -5,12 +5,14 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyCH5i2BjvyXkIpF-NsyYDZK3TVx-ifvoQA",
-    authDomain: "ionic-contacts-app.firebaseapp.com",
-    projectId: "ionic-contacts-app",
-    storageBucket: "ionic-contacts-app.appspot.com",
-    messagingSenderId: "38298401556",
-    appId: "1:38298401556:web:3a7d8eba7b11c5aa74a001"
+    apiKey: "AIzaSyCjLBB8b26K8OCXPPm0cW8gyrXAYoLsSFg",
+    authDomain: "cadeuai-project.firebaseapp.com",
+    databaseURL: "https://cadeuai-project-default-rtdb.firebaseio.com",
+    projectId: "cadeuai-project",
+    storageBucket: "cadeuai-project.appspot.com",
+    messagingSenderId: "776907303040",
+    appId: "1:776907303040:web:abf54785ec5d085e389e65",
+    measurementId: "G-5K1N0N2C50"
   }
 };
 

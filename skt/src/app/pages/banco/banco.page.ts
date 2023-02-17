@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { maps } from 'src/app/modal/maps.model';
 import { MapDatabaseService } from 'src/app/services/map-database.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-banco',
@@ -7,13 +9,13 @@ import { MapDatabaseService } from 'src/app/services/map-database.service';
   styleUrls: ['./banco.page.scss'],
 })
 export class BancoPage {
+  public map: Observable<maps[]>
 
   constructor(
-    private map: MapDatabaseService
+    
+    private map_s: MapDatabaseService
     ) {
-      console.log('sus')
-      this.map.getmaps()
-      console.log("usu")
+      this.map = this.map_s.getmaps();
     }
     
 

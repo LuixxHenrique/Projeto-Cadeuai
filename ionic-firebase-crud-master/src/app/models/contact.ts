@@ -1,13 +1,5 @@
-export class Contact {
-  id: string;
-  firstName: string;
-  lastName: string;
-  phone: string;
-  email: string;
-  category: ContactCategory;
-}
-
-export enum ContactCategory {
-  FRIEND = "Friend",
-  FAMILY = "Family"
+export class sus {
+  entry1: string
+  setor1_way: string
+  setor2_way: string
 }

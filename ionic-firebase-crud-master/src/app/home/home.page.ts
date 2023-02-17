@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { DataService } from '../services/data.service';
-import { Contact } from '../models/contact';
+import { sus } from '../models/contact';
 import { ModalController, IonRouterOutlet } from '@ionic/angular';
-import { NewContactPage } from '../new-contact/new-contact.page';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -11,23 +10,12 @@ import { Observable } from 'rxjs';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  public contacts: Observable<Contact[]>;
+  public contacts: Observable<sus[]>;
 
   constructor(
     private dataService: DataService,
-    public modalController: ModalController,
-    private routerOutlet: IonRouterOutlet
+    public modalController: ModalController
   ) {
     this.contacts = this.dataService.getContacts();
-  }
-
-  async openNewContactModal() {
-    const modal = await this.modalController.create({
-      component: NewContactPage,
-      swipeToClose: true,
-      presentingElement: this.routerOutlet.nativeEl
-    });
-
-    return await modal.present();
   }
 }
