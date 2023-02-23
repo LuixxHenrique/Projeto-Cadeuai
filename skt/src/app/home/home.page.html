@@ -40,7 +40,19 @@
 
   <!-- Adicionando um componente de pesquisa com placeholder -->
   <ion-searchbar placeholder="Procurar"></ion-searchbar>
+  
+      <!-- Adicionando componente de slides com pager habilitado -->
+  <ion-slides pager="True" [options]="option" class="AHAHAHHAHAH">
 
+    <!-- Utilizando o *ngFor para exibir slides de forma dinâmica -->
+    <ion-slide *ngFor="let slide of slides" (click)="routeSelect(slide.num)">
+
+      <h1 class="blz_irmao">{{ slide.titulo }}</h1>  <!-- Exibindo o título do slide -->
+      <img [src]="slide.image" alt="Slide Image">  <!-- Exibindo a imagem do slide -->
+
+    </ion-slide>
+
+</ion-slides>
   
     <ion-img src="assets/map/map 1/entrada/entrada1.png" class="img_map"></ion-img>
 
@@ -48,14 +60,6 @@
     <div *ngIf="image_path != '' ">
       <ion-img src={{image_path}} class="img_map"></ion-img>
     </div>
-
-    <swiper [options]="swiperOptions">
-      <ng-container *ngFor="let slide of slides">
-        <div class="swiper-slide">
-          <img [src]="slide.image">
-        </div>
-      </ng-container>
-    </swiper>
 
 </ion-content>
 
