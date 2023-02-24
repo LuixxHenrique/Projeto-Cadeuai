@@ -50,6 +50,4 @@ export class HomePage{
     // Here you get the image as result.
     const theActualPicture = image.dataUrl;
   }
-
 }
-
