@@ -12,14 +12,6 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: 'create-product',
-    loadChildren: () => import('./pages/other_pages/create-product/create-product.module').then( m => m.CreateProductPageModule)
-  },
-  {
-    path: 'list-product',
-    loadChildren: () => import('./pages/other_pages/list-product/list-product.module').then( m => m.ListProductPageModule)
-  },
-  {
     path: 'config',
     loadChildren: () => import('./pages/config/config.module').then( m => m.ConfigPageModule)
   },
