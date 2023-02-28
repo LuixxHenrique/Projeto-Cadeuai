@@ -2,15 +2,14 @@ import { Injectable } from '@angular/core';
 import { maps } from '../modal/maps.model';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Firestore, collectionData, collection, doc, setDoc, deleteDoc, docSnapshots } from '@angular/fire/firestore';
 
-
+import { Firestore, collectionData, collection} from '@angular/fire/firestore';
+import { getStorage, ref, getDownloadURL} from "firebase/storage";
 
 @Injectable({
   providedIn: 'root'
 })
 export class MapDatabaseService {
-
 
   constructor(private firestore: Firestore) {}
 
@@ -22,4 +21,22 @@ export class MapDatabaseService {
       map(contacts => contacts as maps[])
     );
   }
+
+  getmapsimages() {
+    const storage = getStorage();
+    getDownloadURL(ref(storage, 'mapa_shopping/Ponto_de_inicio(P4).png')).then((url) => {
+        
+        const xhr = new XMLHttpRequest()
+        xhr.responseType = 'blob'
+        xhr.onload = (event) => { const blob = xhr.response }
+        xhr.open('GET', url);
+        xhr.send();
+        const img = document.getElementById('myimg');
+        img?.setAttribute('src', url);
+      })
+      .catch((error) => {
+        // Handle any errors
+      });
+  }
 }
+

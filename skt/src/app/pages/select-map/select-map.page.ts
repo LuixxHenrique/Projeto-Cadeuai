@@ -2,6 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import { Camera, CameraResultType } from '@capacitor/camera';
 import { SwiperModule } from 'swiper/types/shared';
 import { Swiper, SwiperOptions }  from 'swiper';
+import { MapDatabaseService } from 'src/app/services/map-database.service';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { Swiper, SwiperOptions }  from 'swiper';
 })
 export class SelectMapPage implements OnInit {
 
-  constructor() { }
+  constructor(private service: MapDatabaseService) { }
 
   async ngOnInit() { }
   
@@ -23,5 +24,8 @@ export class SelectMapPage implements OnInit {
     });
 
     const theActualPicture = image.dataUrl;
+  }
+  download(){
+    this.service.getmapsimages()
   }
 }
