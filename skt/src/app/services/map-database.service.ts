@@ -29,14 +29,24 @@ export class MapDatabaseService {
         const xhr = new XMLHttpRequest()
         xhr.responseType = 'blob'
         xhr.onload = (event) => { const blob = xhr.response }
-        xhr.open('GET', url);
-        xhr.send();
-        const img = document.getElementById('myimg');
-        img?.setAttribute('src', url);
+        xhr.open('GET', url)
+        xhr.send()
       })
       .catch((error) => {
-        // Handle any errors
-      });
-  }
+        switch (error.code) {
+          case 'storage/object-not-found':
+            
+            break;
+          case 'storage/unauthorized':
+            console.log('User doesnt have permission to access the object')
+            break;
+          case 'storage/canceled':
+            console.log('User canceled the upload')
+            break;
+          case 'storage/unknown':
+            console.log('Unknown error occurred, inspect the server response')
+            break;
+        }
+      })
+    }
 }
-
