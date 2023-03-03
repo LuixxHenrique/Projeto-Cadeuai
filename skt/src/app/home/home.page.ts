@@ -40,7 +40,7 @@ export class HomePage implements OnInit{
 
   ngOnInit() {
     var id: any = String(this.route.snapshot.paramMap.get('id'))
-    this.image_path = `assets/map-shopping/entry-${id}/inicio-${id}.png`
+    this.image_path = `assets/map-shopping/entry-${id}/entry${id}-inicio-${id}.png`
     //assets\map-shopping\entry-1\Inicio-1.png
   }
 
