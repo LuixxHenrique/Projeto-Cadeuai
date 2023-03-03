@@ -1,22 +1,31 @@
-*{
-    padding: 0;
-    margin: 0;
-}
-ion-content{
-    --background-image: linear-gradient(180deg, #001D0B 0%, #0DB045 100%);
-}
-
-ion-img{
-    display: block;
-    justify-content: center;
-    position: absolute;
-    top: 50vw;
-    bottom: 50vh;
+body {
+background-image:
+linear-gradient(to bottom, #001D0B, #0DB045);
+background-repeat: no-repeat;
+background-size: cover;
+background-attachment: fixed;
 }
 
-.Ball_Dtal{
-    clip-path: circle(50%);
-    border: 2px black solid;
+h3 {
+position: relative;
+font-family: arial black;
+font-size: larger;
+top: 70%;
+left: 60%;
+transform: translate(-50%, -50%);
+}
+
+.Logo {
+position: top;
+left: 50%;
+padding: 0px;
+}
+
+.Eclipse {
+position: absolute;
+top: 0%;
+left: 0%;
+padding: 0%;
 }
 
 
