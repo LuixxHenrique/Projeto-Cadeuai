@@ -40,18 +40,14 @@
 
   <!-- Adicionando um componente de pesquisa com placeholder -->
   <ion-searchbar placeholder="Procurar"></ion-searchbar>
-  
-  <!-- <ion-slides pager="True" [options]="option" class="AHAHAHHAHAH">
 
-    <ion-slide *ngFor="let slide of slides" (click)="routeSelect(slide.num)">
-
-      <h1 class="blz_irmao">{{ slide.titulo }}</h1>  
-      <img [src]="slide.image" alt="Slide Image">  
-    </ion-slide>
-
-  </ion-slides> -->
-  
-    <ion-img src="{{image_path}}" class="img_map"></ion-img>
+<ion-slides [options]="sliderOpt" zoom>  
+  <ion-slide>
+    <div  class="image_container">
+      <ion-img src="{{image_path}}" class="img_map"></ion-img>
+    </div>
+  </ion-slide>
+</ion-slides>
 
 </ion-content>
 
@@ -65,7 +61,7 @@
       </ion-button>
 
 
-      <ion-fab-button class="camera_button" (click)="takePicture()">
+      <ion-fab-button (click)="takePicture()">
         <ion-icon name="camera"></ion-icon>
       </ion-fab-button>
 
@@ -76,6 +72,8 @@
 
   </ion-toolbar>
 </ion-footer>
+
+
 <ion-modal #modal trigger="list-modal" [initialBreakpoint]="0.50" [breakpoints]="[0, 0.25, 0.5, 0.75]">
   <ng-template>
     <ion-item>

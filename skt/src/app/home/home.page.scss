@@ -1,33 +1,19 @@
 .menu {
   padding-top: 2rem;
 }
-.img_map{
-  position: absolute;
-  width: 20rem;
-  height: 20rem;
-  top: 13rem;
-}
-.AHAHAHHAHAH{
-  height: 7rem;
-
-}
-.blz_irmao{
-  color: white;
-  position: absolute;
-  left: 10%;
-}
-.logo_bar{
-  position: relative;
-  left: 260px;;
-  height: 1.9rem;
-  width: 1.9rem;
-  background: url("/assets/icon/logo.png");
-  background-size: cover;
-}
 
 .footer {
   display: flex; 
   justify-content: space-between;
   padding-left: 1rem;
   padding-right: 1rem;
+}
+.image_container{
+  display: flex;
+  align-items: center;
+  height: 85%;
+}
+.img_map {
+  transform: rotate(-90deg);
+
 }

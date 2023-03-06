@@ -1,7 +1,6 @@
-import { Component, OnInit} from '@angular/core';
 import { Camera, CameraResultType } from '@capacitor/camera';
 import { ActivatedRoute } from '@angular/router';
-
+import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -9,47 +8,32 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit{
-  // option = {
-  //   slidesPerView: 1.7,
-  //   centeredSlides: true,
-  //   loop: true,
-  // }
-  // slides = [
-  //   {
-  //     titulo: 'Frios',
-  //     image: '/assets/map/setor_images/frios.png',
-  //     num: 1
-  //   },
-  //   {
-  //     titulo: 'Limpeza',
-  //     image: '/assets/map/setor_images/limpeza.png',
-  //     num: 2
-  //   },
-  //   {
-  //     titulo: 'Bebidas',
-  //     image: '/assets/map/setor_images/bebidas.png',
-  //     num: 2
-  //   }
-  // ];
+  public image_path =  '' // armazena a imagem inicial
 
-  public image_path =  '' 
+  sliderOpt = {
+    zoom: {
+      maxRatio: 1,
+    },
+  }
   
   constructor(
-    private route : ActivatedRoute
+    private route : ActivatedRoute 
   ) {}
 
   ngOnInit() {
+    // coleta o id da pagina e monstra a imagem inicial
     var id: any = String(this.route.snapshot.paramMap.get('id'))
     this.image_path = `assets/map-shopping/entry-${id}/entry${id}-inicio-${id}.png`
-    //assets\map-shopping\entry-1\Inicio-1.png
   }
 
   routeSelect(loja: string){
+    // coleta o id da pagina e monstra a imagem da rota até o setor
     var id: any = String(this.route.snapshot.paramMap.get('id'))
     this.image_path = `assets/map-shopping/entry-${id}/entry${id}-${loja}.png`
   }
 
   async takePicture() {
+    // monstra a camera na tela
     const image = await Camera.getPhoto({
       quality: 100,
       allowEditing: false,
@@ -59,4 +43,5 @@ export class HomePage implements OnInit{
     // Here you get the image as result.
     const theActualPicture = image.dataUrl;
   }
+
 }
