@@ -35,22 +35,19 @@
   </ion-toolbar>
 </ion-header>
 
+
+  <!-- <ion-img src="caminho/para/sua/imagem.jpg" (click)="showImage()"></ion-img> -->
 <!----------------------------------------------- content -------------------------------------------------->
-<ion-content id="my-content">
+<ion-content id="my-content" [scrollX]="false" [scrollY]="false">
 
-  <!-- Adicionando um componente de pesquisa com placeholder -->
-  <ion-searchbar placeholder="Procurar"></ion-searchbar>
+    <!-- Adicionando um componente de pesquisa com placeholder -->
+  <ion-gesture  (ionGesturePinch)="zoom($event)" direction="xy"> </ion-gesture>
 
-<ion-slides [options]="sliderOpt" zoom>  
-  <ion-slide>
-    <div  class="image_container">
-      <ion-img src="{{image_path}}" class="img_map"></ion-img>
-    </div>
-  </ion-slide>
-</ion-slides>
+    <ion-searchbar placeholder="Procurar"></ion-searchbar>
 
+    <img src="{{image_path}}" id="img_map">
+ 
 </ion-content>
-
 
 <ion-footer>
   <ion-toolbar>
