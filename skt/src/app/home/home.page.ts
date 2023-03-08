@@ -16,14 +16,10 @@ import { GestureController } from '@ionic/angular';
 })
 export class HomePage implements OnInit{
   @ViewChild('img', { static: true }) img: any;
-  currentScale = 1;
   public image_path =  '' // armazena a imagem inicia
   
   constructor(
     // constructor(private imageViewerCtrl: ImageViewerController) { }
-
-    private gestureCtrl: GestureController,
-    public gesture: Gesture,
     private route : ActivatedRoute 
   ) {}
 
@@ -40,22 +36,11 @@ export class HomePage implements OnInit{
     this.image_path = `assets/map-shopping/entry-${id}/entry${id}-${loja}.png`
   }
   
-  ionViewWillEnter() {
-    this.gesture = new Gesture(document.querySelector('ion-gesture'));
-    this.gesture.enable(true);
-  }
-
   // showImage() {
   //   const image = document.querySelector('ion-img');
   //   const imageViewer = this.imageViewerCtrl.create(image);
   //   imageViewer.present();
   // }
-
-
-  zoom(ev: GestureDetail) {
-    this.currentScale = this.currentScale * (1 + ev.scale / 100);
-    this.img.nativeElement.style.transform = `scale(${this.currentScale})`;
-  }
 
   async takePicture() {
     // monstra a camera na tela

@@ -35,17 +35,14 @@
   </ion-toolbar>
 </ion-header>
 
-
-  <!-- <ion-img src="caminho/para/sua/imagem.jpg" (click)="showImage()"></ion-img> -->
 <!----------------------------------------------- content -------------------------------------------------->
 <ion-content id="my-content" [scrollX]="false" [scrollY]="false">
 
     <!-- Adicionando um componente de pesquisa com placeholder -->
-  <ion-gesture  (ionGesturePinch)="zoom($event)" direction="xy"> </ion-gesture>
 
     <ion-searchbar placeholder="Procurar"></ion-searchbar>
 
-    <img src="{{image_path}}" id="img_map">
+    <img src="{{image_path}}" class="img_map">
  
 </ion-content>
 
