@@ -3,11 +3,8 @@
 
 import { Camera, CameraResultType } from '@capacitor/camera';
 import { ActivatedRoute } from '@angular/router';
-import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
-import { Gesture, GestureDetail } from '@ionic/core';
-import { GestureController } from '@ionic/angular';
-// import { ImageViewerController } from 'ionic-img-viewer';
-
+import { Component, OnInit } from '@angular/core';
+import { MapGenerationService } from '../services/map-generation.service';
 
 @Component({
   selector: 'app-home',
@@ -15,19 +12,19 @@ import { GestureController } from '@ionic/angular';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit{
-  @ViewChild('img', { static: true }) img: any;
   public image_path =  '' // armazena a imagem inicia
   
   constructor(
-    // constructor(private imageViewerCtrl: ImageViewerController) { }
-    private route : ActivatedRoute 
+    private route : ActivatedRoute,
+    private mapgenerate: MapGenerationService
   ) {}
 
   ngOnInit() {
     // coleta o id da pagina e monstra a imagem inicial
     var id: any = String(this.route.snapshot.paramMap.get('id'))
     this.image_path = `assets/map-shopping/entry-${id}/entry${id}-inicio-${id}.png`
-    
+
+    // this.map_css(1.5)
   }
 
   routeSelect(loja: string){
@@ -35,6 +32,15 @@ export class HomePage implements OnInit{
     var id: any = String(this.route.snapshot.paramMap.get('id'))
     this.image_path = `assets/map-shopping/entry-${id}/entry${id}-${loja}.png`
   }
+  // map_css(scale: number){
+  //   var imgMap = document.getElementById('img_map')
+  //   if (imgMap) {
+  //     const scaleString = `scale(${scale})`
+  //     const rotate = "rotate(-90deg)"
+  //     imgMap.style.transform = `${scaleString} ${rotate}`
+  //     imgMap.style.marginTop = "7.5rem"
+  //   }
+  // }
   
   // showImage() {
   //   const image = document.querySelector('ion-img');
