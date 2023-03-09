@@ -38,7 +38,11 @@ const routes: Routes = [
   {
     path: 'select-entry',
     loadChildren: () => import('./pages/select-entry/select-entry.module').then( m => m.SelectEntryPageModule)
+  },  {
+    path: 'notificacao',
+    loadChildren: () => import('./pages/notificacao/notificacao.module').then( m => m.NotificacaoPageModule)
   }
+
 
 
   

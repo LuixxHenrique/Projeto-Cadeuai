@@ -1,11 +1,6 @@
-// npm install ionic-img-viewer --save
-// https://www.npmjs.com/package/ionic-img-viewer
-
 import { Camera, CameraResultType } from '@capacitor/camera';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { MapGenerationService } from '../services/map-generation.service';
-import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -16,9 +11,7 @@ export class HomePage implements OnInit{
   public image_path =  '' // armazena a imagem inicia
   
   constructor(
-    private route : ActivatedRoute,
-    private mapgenerate: MapGenerationService,
-    private modalController: ModalController
+    private route : ActivatedRoute
   ) {}
 
   ngOnInit() {
@@ -31,7 +24,6 @@ export class HomePage implements OnInit{
 
   routeSelect(loja: string){
     // coleta o id da pagina e monstra a imagem da rota até o setor
-    this.modalController.dismiss()
     var id: any = String(this.route.snapshot.paramMap.get('id'))
     this.image_path = `assets/map-shopping/entry-${id}/entry${id}-${loja}.png`
   }
@@ -45,11 +37,6 @@ export class HomePage implements OnInit{
     }
   }
   
-  // showImage() {
-  //   const image = document.querySelector('ion-img');
-  //   const imageViewer = this.imageViewerCtrl.create(image);
-  //   imageViewer.present();
-  // }
 
   async takePicture() {
     // monstra a camera na tela
@@ -62,5 +49,4 @@ export class HomePage implements OnInit{
     // Here you get the image as result.
     const theActualPicture = image.dataUrl;
   }
-
 }

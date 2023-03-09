@@ -11,10 +11,12 @@ import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
 
+import { NgxIonicImageViewerModule } from 'ngx-ionic-image-viewer';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, provideFirebaseApp(()=> initializeApp(environment.firebase)),
-    provideFirestore(() => getFirestore()), HttpClientModule],
+    provideFirestore(() => getFirestore()), HttpClientModule, NgxIonicImageViewerModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
