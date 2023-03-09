@@ -1,6 +1,9 @@
 .menu {
   padding-top: 2rem;
 }
+.content{
+  overflow: hidden
+}
 
 .footer {
   display: flex; 
@@ -8,10 +11,9 @@
   padding-left: 1rem;
   padding-right: 1rem;
 }
-// #img_map{
-//   transform: rotate(-90deg) scale(1.5);
-//   margin-top: 7.5rem;
-// }
+#img_map{
+  height: 30rem;
+}
 .setor_buttons{
   display: flex;
   flex-direction: column;

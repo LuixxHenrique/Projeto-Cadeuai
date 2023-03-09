@@ -36,12 +36,20 @@
 </ion-header>
 
 <!----------------------------------------------- content -------------------------------------------------->
-<ion-content id="my-content" >
+<ion-content id="my-content" class="content">
 
     <!-- Adicionando um componente de pesquisa com placeholder -->
 
     <ion-searchbar placeholder="Procurar"></ion-searchbar>  
-    <ion-img ionImgViewer scheme="light" src="{{image_path}}" id="img_map"></ion-img>
+    <!-- <ion-img ionImgViewer scheme="light" src="{{image_path}}" id="img_map"></ion-img> -->
+
+    <ion-slides [options]="sliderOpt" zoom id="img_map">
+      <ion-slide>
+        <div class="swiper-zoom-container">
+           <img src="{{image_path}}">
+        </div>
+      </ion-slide>
+    </ion-slides>
 
 </ion-content>
 
