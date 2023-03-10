@@ -7,8 +7,6 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 
-import { NgxIonicImageViewerModule } from 'ngx-ionic-image-viewer';
-
 @NgModule({
   imports: [
     CommonModule,
@@ -16,8 +14,7 @@ import { NgxIonicImageViewerModule } from 'ngx-ionic-image-viewer';
     IonicModule,
     HomePageRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule,
-    NgxIonicImageViewerModule
+    HttpClientModule
   ],
   declarations: [HomePage],
   providers: []

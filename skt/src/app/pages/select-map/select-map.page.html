@@ -1,6 +1,7 @@
-<ion-content class="cont_main">
+<ion-content class="cont_main" [fullscreen]="true" [style.--background]="scanactive ? '#00000000' : '#ffffff'">
   <div>
     <ion-button routerLink="/select-entry" (click)="download()">Mapas Salvos</ion-button>  
-    <ion-button id="FileLocal" (click)="takePicture()">Ler QR Code</ion-button>
+    <ion-button id="FileLocal" (click)="takePicture()">Camera</ion-button>
+    <ion-button (click)="startScanner()" [hidden]="scanactive">SCAN</ion-button>
   </div>
 </ion-content>

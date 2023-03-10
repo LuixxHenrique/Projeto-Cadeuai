@@ -9,12 +9,14 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit{
-  public image_path =  '' // armazena a imagem inicia
+  public image_path =  '' // armazena local do arquivo da imagem
+
+  // opções para dar zoom a imagem no slide
   sliderOpt = {
     zoom: {
       maxRatio: 3.5,
     },
-  }
+  } 
   
   constructor(
     private route : ActivatedRoute,
@@ -25,8 +27,6 @@ export class HomePage implements OnInit{
     // coleta o id da pagina e monstra a imagem inicial
     var id: any = String(this.route.snapshot.paramMap.get('id'))
     this.image_path = `assets/map-shopping/entry-${id}/entry${id}-inicio-${id}.png`
-
-    // this.map_css(0.8)
   }
 
   routeSelect(loja: string){
@@ -35,18 +35,7 @@ export class HomePage implements OnInit{
     var id: any = String(this.route.snapshot.paramMap.get('id'))
     this.image_path = `assets/map-shopping/entry-${id}/entry${id}-${loja}.png`
   }
-  // map_css(scale: number){
-  //   var imgMap = document.getElementById('img_map')
-  //   if (imgMap) {
-  //     const scaleString = `scale(${scale})`
-  //     // const rotate = "rotate(-90deg)"
-  //     imgMap.style.transform = `${scaleString} ` 
-  //     // ${rotate}
-  //     // imgMap.style.marginTop = "7rem"
-  //   }
-  // }
   
-
   async takePicture() {
     // monstra a camera na tela
     const image = await Camera.getPhoto({
