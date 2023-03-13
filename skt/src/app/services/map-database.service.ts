@@ -3,7 +3,7 @@ import { maps } from '../modal/maps.model';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { Firestore, collectionData, collection} from '@angular/fire/firestore';
+// import { Firestore, collectionData, collection} from '@angular/fire/firestore';
 import { getStorage, ref, getDownloadURL} from "firebase/storage";
 
 @Injectable({
@@ -11,16 +11,17 @@ import { getStorage, ref, getDownloadURL} from "firebase/storage";
 })
 export class MapDatabaseService {
 
-  constructor(private firestore: Firestore) {}
+  // private firestore: Firestore
+  constructor() {}
 
-  getmaps(): Observable<maps[]> {
-    const contactsCollection = collection(this.firestore, 'maps');
-    // this method returns a stream of documents mapped to their payload and id
-    return collectionData(contactsCollection, {idField: 'id'})
-    .pipe(
-      map(contacts => contacts as maps[])
-    );
-  }
+  // getmaps(): Observable<maps[]> {
+  //   const contactsCollection = collection(this.firestore, 'maps');
+  //   // this method returns a stream of documents mapped to their payload and id
+  //   return collectionData(contactsCollection, {idField: 'id'})
+  //   .pipe(
+  //     map(contacts => contacts as maps[])
+  //   );
+  // }
 
   getmapsimages() {
     const storage = getStorage();

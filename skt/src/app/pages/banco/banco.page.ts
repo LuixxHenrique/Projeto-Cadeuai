@@ -9,14 +9,16 @@ import { Observable } from 'rxjs';
   styleUrls: ['./banco.page.scss'],
 })
 export class BancoPage {
-  public map: Observable<maps[]>
+  // public map: Observable<maps[]>
 
   constructor(
     
     private map_s: MapDatabaseService
-    ) {
-      this.map = this.map_s.getmaps();
-    }
+    ) 
+    // {
+    //   this.map = this.map_s.getmaps();
+    // }
+    {}
     
 
 }
